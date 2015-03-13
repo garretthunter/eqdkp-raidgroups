@@ -1,0 +1,52 @@
+<!-- INCLUDE ../../../../templates/WoWMoonclaw01/page_header.html -->
+<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+  <tr>
+    <td align="center" class="menu">{RAIDGROUPS_PAGINATION}</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+  <tr>
+    <th align="left" width="100">{L_NAME}</th>
+    <th align="left" nowrap="nowrap">{L_RAID_NAMES}</th>
+    <th align="left" width="60" nowrap="nowrap">{L_DISPLAY}</th>
+    <th width="120" colspan="2">
+      <div align="center">{L_DISPLAY_ORDER}</div>
+    </th>
+  </tr>
+  <!-- BEGIN raidgroups_row -->
+  <tr class="{raidgroups_row.ROW_CLASS}">
+    <td width="100" valign="top"><a href="{raidgroups_row.U_VIEW_RAIDGROUP}">{raidgroups_row.RAIDGROUP_NAME}</a></td>
+    <td valign="top">{raidgroups_row.RAIDGROUP_RAID_NAMES}</td>
+    <td width="60" valign="top"><div align="center">{raidgroups_row.RAIDGROUP_DISPLAY}</div></td>
+    <td valign="top">
+	&nbsp;
+	<!-- IF raidgroups_row.S_DOWN -->
+		<form method="post">
+			<input type="submit" name="display_order" value="{L_DOWN}" class="liteoption" />
+			<input type="hidden" name="raidgroup_id" value="{raidgroups_row.RAIDGROUP_ID}" />
+			<input type="hidden" name="raidgroup_display_order" value="{raidgroups_row.RAIDGROUP_DISPLAY_ORDER}" />
+	  </form>
+	<!-- ENDIF -->
+&nbsp;	</td>
+    <td valign="top">
+	&nbsp;
+	<!-- IF raidgroups_row.S_UP -->
+		<form method="post">
+			<input type="submit" name="display_order" value="{L_UP}" class="liteoption" />
+			<input type="hidden" name="raidgroup_id" value="{raidgroups_row.RAIDGROUP_ID}" />
+			<input type="hidden" name="raidgroup_display_order" value="{raidgroups_row.RAIDGROUP_DISPLAY_ORDER}" />
+	  </form>
+	<!-- ENDIF -->
+&nbsp;	</td>
+  </tr>
+  <!-- END raidgroups_row -->
+  <tr>
+    <th colspan="5" class="footer">{LISTRAIDGROUPS_FOOTCOUNT}</th>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+  <tr>
+    <td align="center" class="menu">{RAIDGROUPS_PAGINATION}</td>
+  </tr>
+</table>
+<!-- INCLUDE ../../../../templates/WoWMoonclaw01/page_tail.html -->
